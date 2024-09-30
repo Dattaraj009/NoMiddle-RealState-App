@@ -2,13 +2,33 @@ import React from 'react'
 
 export default function About() {
   return (
-    <div className='py-20 px-4 max-w-6xl mx-auto'>
-      <h1 className='text-3xl font-bold mb-4 text-slate-800'>About Sahand Estate</h1>
-      <p className='mb-4 text-slate-700'>Sahand Estate is a leading real estate agency that specializes in helping clients buy, sell, and rent properties in the most desirable neighborhoods. Our team of experienced agents is dedicated to providing exceptional service and making the buying and selling process as smooth as possible.</p>
-      <p className='mb-4 text-slate-700'>
-      Our mission is to help our clients achieve their real estate goals by providing expert advice, personalized service, and a deep understanding of the local market. Whether you are looking to buy, sell, or rent a property, we are here to help you every step of the way.
-      </p>
-      <p className='mb-4 text-slate-700'>Our team of agents has a wealth of experience and knowledge in the real estate industry, and we are committed to providing the highest level of service to our clients. We believe that buying or selling a property should be an exciting and rewarding experience, and we are dedicated to making that a reality for each and every one of our clients.</p>
-    </div>
+                <main className="text-center py-16 bg-white px-52">
+                <h1 className="text-4xl font-bold text-gray-900">Reimagining real estate to make it easier to unlock.</h1>
+                <p className="text-gray-600 mt-4">On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment.</p>
+                <div className="container mx-auto p-8 text-balck ">
+                    <div className="text-center ">
+                        <h2 className="text-2xl font-bold mb-4  text-black">Our vision is simple.</h2>
+                        <p className="text-gray-600 mb-4">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. In a free hour, On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment.
+                            In a free hour, On the other hand, we denounce with righteous indignation and dislike men.
+                        </p>
+                    </div>
+                    <div className="mt-16">
+                        <h2 className="text-center text-2xl font-bold mb-8 text-black">Team members</h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center text ">
+                            {[
+                                { name: "kedar Kolase" },
+                                { name: "Dattaraj Jadhav"},
+                                { name: "Pranav Dhebe" },
+                                { name: "Sairaj Magdum" },
+                            ].map((member, index) => (
+                                <div key={index} className="text-center">
+                                    <p className="text-gray-800 font-bold">{member.name}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </main>
   )
 }
