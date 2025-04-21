@@ -1,4 +1,4 @@
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, FaHeart } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
@@ -46,7 +46,7 @@ export default function Header() {
             <FaSearch className='text-slate-600' />
           </button>
         </form>
-        <ul className='flex gap-4'>
+        <ul className='flex gap-4 items-center'>
           <Link to='/'>
             <li className='hidden sm:inline text-slate-700 hover:underline'>
               Home
@@ -57,17 +57,38 @@ export default function Header() {
               About
             </li>
           </Link>
-          <Link to='/profile'>
-            {currentUser ? (
+          {currentUser && (
+            <Link to='/favorites'>
+              <li className='flex items-center text-slate-700 hover:underline'>
+                <FaHeart className='text-red-500 mr-1' />
+                <span className='hidden sm:inline'>Favorites</span>
+              </li>
+            </Link>
+          )}
+          <Link to='/debug'>
+            <li className='hidden sm:inline text-blue-600 font-medium hover:underline'>
+              Debug
+            </li>
+          </Link>
+          
+          {currentUser ? (
+            <Link to='/profile'>
               <img
                 className='rounded-full h-7 w-7 object-cover'
                 src={currentUser.avatar}
                 alt='profile'
               />
-            ) : (
-              <li className=' text-slate-700 hover:underline'> Sign in</li>
-            )}
-          </Link>
+            </Link>
+          ) : (
+            <div className='flex gap-3'>
+              <Link to='/sign-in'>
+                <li className='text-blue-600 font-medium hover:underline px-2 py-1 border border-blue-600 rounded'>Sign In</li>
+              </Link>
+              <Link to='/sign-up'>
+                <li className='bg-blue-600 text-white px-3 py-1 rounded-lg hover:bg-blue-700'>Sign Up</li>
+              </Link>
+            </div>
+          )}
         </ul>
       </div>
     </header>

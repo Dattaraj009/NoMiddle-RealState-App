@@ -11,5 +11,9 @@ export const verifyToken = (req, res, next) => {
 
     req.user = user;
     next();
+    console.log("req.user:", req.user);
+    console.log("req.body:", req.body);
+    console.log("req.file:", req.file);
+
   });
 };
